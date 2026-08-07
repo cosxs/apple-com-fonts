@@ -1,0 +1,66 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "apple-com-fonts"
+version = "0.6.0"
+description = "Discover, download, validate, and organize Apple global-homepage WSS fonts"
+readme = "README.md"
+authors = [{ name = "cosxs" }]
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.14"
+classifiers = [
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.14",
+  "Typing :: Typed",
+]
+dependencies = [
+  "httpx[http2]>=0.28.1,<1",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pyright>=1.1.408,<2",
+  "pytest>=8.4,<10",
+  "pytest-asyncio>=1.1,<2",
+  "pytest-cov>=7.1,<8",
+  "ruff>=0.12,<1",
+]
+
+[project.scripts]
+apple-com-fonts = "apple_com_fonts.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/apple_com_fonts"]
+
+[tool.pytest.ini_options]
+addopts = "-q --cov=apple_com_fonts --cov-report=term-missing"
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+testpaths = ["tests"]
+
+[tool.coverage.run]
+branch = true
+source = ["apple_com_fonts"]
+
+[tool.coverage.report]
+fail_under = 85
+show_missing = true
+skip_covered = true
+
+[tool.pyright]
+include = ["src", "tests"]
+pythonVersion = "3.14"
+pythonPlatform = "Darwin"
+typeCheckingMode = "strict"
+venvPath = "."
+venv = ".venv"
+
+[tool.ruff]
+line-length = 100
+target-version = "py314"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]

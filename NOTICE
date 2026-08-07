@@ -1,0 +1,29 @@
+Copyright and Third-Party Notices
+
+Project source code
+-------------------
+
+Copyright (c) 2026 cosxs
+
+The MIT License in LICENSE applies only to the original source code, tests,
+configuration, and automation authored for this project.
+
+Apple.com public font files
+---------------------------
+
+This project only discovers and downloads font files that are publicly
+accessible from apple.com through /wss/fonts URLs referenced by Apple's public
+country and region homepages.
+
+Public accessibility does not place those files in the public domain and does
+not make them subject to the MIT License for this project's source code.
+
+All rights in Apple-provided font files, font names, trademarks, and related
+content remain with Apple Inc. and/or their respective rights holders. Apple,
+the Apple logo, San Francisco, SF Pro, and PingFang may be trademarks of Apple
+Inc.
+
+This project is independent and is not affiliated with, endorsed by, or
+sponsored by Apple Inc. Redistribution of font files is separate from the MIT
+License and remains the responsibility of the distributor under the applicable
+permissions, licenses, and terms.
